@@ -4,22 +4,7 @@ public class Person {
     protected int age;
     protected String city;
 
-    //    public Person(final String surname, final String name) {
-//        this.surname = surname;
-//        this.name = name;
-//    }
-//
-//    public Person(final String name, final String surname, int age) {
-//        this.name = name;
-//        this.surname = surname;
-//        this.age = age;
-//    }
-//    Person(final String name, final String surname, int age, String city){
-//        this.name = name;
-//        this.surname = surname;
-//        this.age = age;
-//        this.city = city;
-//    }
+
     Person(final PersonBuilder personBuilder) {
         this.name = personBuilder.name;
         this.surname = personBuilder.surname;
