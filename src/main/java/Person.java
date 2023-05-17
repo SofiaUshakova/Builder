@@ -3,14 +3,25 @@ public class Person {
     protected final String surname;
     protected int age;
     protected String city;
-
-
-    Person(final PersonBuilder personBuilder) {
+    public Person(final PersonBuilder personBuilder) {
         this.name = personBuilder.name;
         this.surname = personBuilder.surname;
-        this.age = personBuilder.age;
-        this.city = personBuilder.city;
     }
+
+    public Person(String name, String surname, int age){
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+
+
+//    Person(final PersonBuilder personBuilder) {
+//        this.name = personBuilder.name;
+//        this.surname = personBuilder.surname;
+//        this.age = personBuilder.age;
+//     }
+
+
 
     public PersonBuilder newChildBuilder() {
         return new PersonBuilder()
