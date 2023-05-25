@@ -37,10 +37,30 @@ public class PersonBuilder {
         return this;
     }
 
+    //    public Person build() throws IllegalStateException, IllegalArgumentException {
+//
+//        return new Person(this);
+//    }
     public Person build() throws IllegalStateException, IllegalArgumentException {
+        if (name != null && surname != null) {
+            if (Integer.valueOf(age).equals(null)) {
+                return new Person(name, surname);
+            } else {
+                return new Person(name, surname, age);
+            }
+        }else {
+            if (name == null){
+                throw new IllegalStateException("Name parameter missing");
+            }
+            if (surname == null){
+                throw new IllegalStateException("Surname parameter missing");
+            }
+            if (age == 0){
+                throw new IllegalArgumentException("Incorrect age!");
+            }
+        }
 
-        return new Person(this);
+        return null;
     }
 
 }
-

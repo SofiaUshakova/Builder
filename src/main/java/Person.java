@@ -3,9 +3,10 @@ public class Person {
     protected final String surname;
     protected int age;
     protected String city;
-    public Person(final PersonBuilder personBuilder) {
-        this.name = personBuilder.name;
-        this.surname = personBuilder.surname;
+
+    public Person(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
 
     public Person(String name, String surname, int age){
@@ -13,14 +14,6 @@ public class Person {
         this.surname = surname;
         this.age = age;
     }
-
-
-//    Person(final PersonBuilder personBuilder) {
-//        this.name = personBuilder.name;
-//        this.surname = personBuilder.surname;
-//        this.age = personBuilder.age;
-//     }
-
 
 
     public PersonBuilder newChildBuilder() {
