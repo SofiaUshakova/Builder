@@ -1,3 +1,4 @@
+import java.util.Optional;
 import java.util.OptionalInt;
 
 public class Person {
@@ -11,7 +12,7 @@ public class Person {
         this.surname = surname;
     }
 
-    public Person(String name, String surname, int age){
+    public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -46,8 +47,13 @@ public class Person {
         return surname;
     }
 
-    public OptionalInt getAge() { return OptionalInt.of(age); }
-
+    public OptionalInt getAge(Person person) {
+        if (person.hasAge(age)) {
+            return OptionalInt.of(age);
+        } else {
+            return OptionalInt.empty();
+        }
+    }
 
     public String getAddress() {
         return city;
