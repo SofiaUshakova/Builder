@@ -49,11 +49,8 @@ public class Person {
 
 
     public OptionalInt getAge() {
-        OptionalInt age = getAge();
-        if (!age.isEmpty()) {
-            return age;
-        }
-        return OptionalInt.empty();
+
+        return OptionalInt.of(age);
     }
 
 
