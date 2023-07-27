@@ -40,9 +40,13 @@ public class PersonBuilder {
     public Person build() throws IllegalStateException, IllegalArgumentException {
         if (name != null && surname != null) {
             if (Integer.valueOf(age).equals(null)) {
-                return new Person(name, surname);
+                Person person = new Person(name, surname);
+                person.setAddress(city);
+                return person;
             } else {
-                return new Person(name, surname, age);
+                Person person = new Person(name, surname, age);
+                person.setAddress(city);
+                return person;
             }
         } else {
             if (name == null) {
